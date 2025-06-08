@@ -49,7 +49,10 @@ let () =
   Printf.printf "result_7 -> \"hi\" = \"hi\": %b\n" result_7;
   
   (* Answer: true 
-  OCaml's compiler performs string interning. When you have identical string literals in your code, the compiler often stores them at the same memory location to save space. So both "hi" literals actually point to the same memory address.
+  OCaml's compiler performs string interning. 
+  When you have identical string literals in your code, 
+  the compiler often stores them at the same memory location to save space.
+  So both "hi" literals actually point to the same memory address.
   *) 
   let result_8 = ("hi" == "hi") in
   Printf.printf "result_8 -> \"hi\" == \"hi\": %b\n" result_8
