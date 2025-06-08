@@ -31,4 +31,25 @@ let () =
 
   (* Answer: 23053.933325 *) 
   let result_5: float = 4.2 ** 7.0 in
-  Printf.printf "result_5 = %f\n" result_5 
+  Printf.printf "result_5 = %f\n" result_5;
+
+  (*
+  Exercise: equality [★]
+  - Write an expression that compares 42 to 42 using structural equality.
+  - Write an expression that compares "hi" to "hi" using structural equality. What is the result?
+  - Write an expression that compares "hi" to "hi" using physical equality. What is the result?
+  *)
+
+  (* Answer: true *) 
+  let result_6 = (42 = 42) in
+  Printf.printf "result_6 -> 42 = 42: %b\n" result_6;
+  
+  (* Answer: true *) 
+  let result_7 = ("hi" = "hi") in
+  Printf.printf "result_7 -> \"hi\" = \"hi\": %b\n" result_7;
+  
+  (* Answer: true 
+  OCaml's compiler performs string interning. When you have identical string literals in your code, the compiler often stores them at the same memory location to save space. So both "hi" literals actually point to the same memory address.
+  *) 
+  let result_8 = ("hi" == "hi") in
+  Printf.printf "result_8 -> \"hi\" == \"hi\": %b\n" result_8
