@@ -91,11 +91,12 @@ Printf.printf "result_10 = %d\n" result_10;;
 Exercise: double fun [★]
 Using the increment function from above as a guide, define a function double that multiplies its input by 2. For example, double 7 would be 14. Test your function by applying it to a few inputs. Turn those test cases into assertions.
 *)
-let doubleThat x = x * 2;;
-let double7 = doubleThat 7;;
+let double_that x = x * 2;;
+let double7 = double_that 7;;
 Printf.printf "result_11 = %d\n" double7;;
 
-let () = assert(doubleThat 0 = 0);;
-let () = assert(doubleThat 1 = 2);;
-let () = assert(doubleThat 3 = 6);;
-let () = assert(doubleThat 7 = 14);;
+let () = assert(double_that 0 = 0);;
+let () = assert(double_that 1 = 2);;
+let () = assert(double_that 3 = 6);;
+let () = assert(double_that 7 = 14);;
+
