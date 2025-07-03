@@ -79,3 +79,11 @@ The assertion is true, so execution continues without throwing a fatal error.
 *)
 let _result_9 = assert(2110 != 3110);;
 
+(*
+Exercise: if [★]
+Write an if expression that evaluates to 42 if 2 is greater than 1 and otherwise evaluates to 7.
+*)
+let result_10 = if 2 > 1 then 42 else 7;;
+Printf.printf "result_9 -> %d\n" result_10;;
+
+
