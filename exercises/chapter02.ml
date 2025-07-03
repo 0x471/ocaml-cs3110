@@ -42,11 +42,11 @@ Exercise: equality [★]
 
 (* Answer: true *) 
 let result_6 = (42 = 42);;
-Printf.printf "result_6 -> 42 = 42: %b\n" result_6;;
+Printf.printf "result_6 = 42 = 42: %b\n" result_6;;
 
 (* Answer: true *) 
 let result_7 = ("hi" = "hi");;
-Printf.printf "result_7 -> \"hi\" = \"hi\": %b\n" result_7;;
+Printf.printf "result_7 = \"hi\" = \"hi\": %b\n" result_7;;
 
 (* Answer: true 
 OCaml's compiler performs string interning. 
@@ -55,7 +55,7 @@ the compiler often stores them at the same memory location to save space.
 So both "hi" literals actually point to the same memory address.
 *) 
 let result_8 = ("hi" == "hi");;
-Printf.printf "result_8 -> \"hi\" == \"hi\": %b\n" result_8;;
+Printf.printf "result_8 = \"hi\" == \"hi\": %b\n" result_8;;
 
 (*
 Exercise: assert [★]
@@ -78,12 +78,24 @@ Exception: Assert_failure ("//toplevel//", 1, 0).
 The assertion is true, so execution continues without throwing a fatal error.
 *)
 let _result_9 = assert(2110 != 3110);;
+Printf.printf("result_9 is an assertion\n");;
 
 (*
 Exercise: if [★]
 Write an if expression that evaluates to 42 if 2 is greater than 1 and otherwise evaluates to 7.
 *)
 let result_10 = if 2 > 1 then 42 else 7;;
-Printf.printf "result_9 -> %d\n" result_10;;
+Printf.printf "result_10 = %d\n" result_10;;
 
+(*
+Exercise: double fun [★]
+Using the increment function from above as a guide, define a function double that multiplies its input by 2. For example, double 7 would be 14. Test your function by applying it to a few inputs. Turn those test cases into assertions.
+*)
+let doubleThat x = x * 2;;
+let double7 = doubleThat 7;;
+Printf.printf "result_11 = %d\n" double7;;
 
+let () = assert(doubleThat 0 = 0);;
+let () = assert(doubleThat 1 = 2);;
+let () = assert(doubleThat 3 = 6);;
+let () = assert(doubleThat 7 = 14);;
