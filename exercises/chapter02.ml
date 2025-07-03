@@ -56,3 +56,26 @@ So both "hi" literals actually point to the same memory address.
 *) 
 let result_8 = ("hi" == "hi");;
 Printf.printf "result_8 -> \"hi\" == \"hi\": %b\n" result_8;;
+
+(*
+Exercise: assert [★]
+- Enter assert true;; into utop and see what happens.
+- Enter assert false;; into utop and see what happens.
+- Write an expression that asserts 2110 is not (structurally) equal to 3110.
+*)
+
+(* Answer: 
+utop # assert true;;
+- : unit = ()
+*)
+
+(* Answer:
+utop # assert false;;
+Exception: Assert_failure ("//toplevel//", 1, 0).
+*)
+
+(* Answer:
+The assertion is true, so execution continues without throwing a fatal error.
+*)
+let _result_9 = assert(2110 != 3110);;
+
