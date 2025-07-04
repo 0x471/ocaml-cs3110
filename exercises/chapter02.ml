@@ -1,4 +1,3 @@
-
 (* 
 Exercise: values [★]
 What is the type and value of each of the following OCaml expressions? 
@@ -100,3 +99,39 @@ let () = assert(double_that 1 = 2);;
 let () = assert(double_that 3 = 6);;
 let () = assert(double_that 7 = 14);;
 
+(*
+Exercise: more fun [★★]
+- Define a function that computes the cube of a floating-point number. Test your function by applying it to a few inputs.
+- Define a function that computes the sign (1, 0, or -1) of an integer. Use a nested if expression. Test your function by applying it to a few inputs.
+- Define a function that computes the area of a circle given its radius. Test your function with assert.
+
+For the latter, bear in mind that floating-point arithmetic is not exact. Instead of asserting an exact value, you should assert that the result is “close enough”, e.g., within 1e-5. If that’s unfamiliar to you, it would be worthwhile to read up on floating-point arithmetic.
+
+A function that take multiple inputs can be defined just by providing additional names for those inputs as part of the let definition. For example, the following function computes the average of three arguments:
+
+`let avg3 x y z = (x +. y +. z) /. 3.`
+*)
+
+
+(* Note: This won't work for floating numbers that cannot be represented exactly in binary floating points such as 9.9 or 0.1. The solution for that is using epsilon comparison or calculating the exact expected value. *)
+let float_cube x = x ** 3.;;
+let () = assert(float_cube 3. = 27.);;
+let () = assert(float_cube 2.5 = 15.625);;
+let () = assert(float_cube 4.25 = 76.765625);;
+Printf.printf("result_12 is an assertion\n");;
+
+let give_sign x =
+  if x > 0 then 1
+  else if x < 0 then -1 
+  else 0;;
+let () = assert(give_sign 3 == 1);;
+let () = assert(give_sign (-5) == -1);;
+let () = assert(give_sign 0 == 0);;
+Printf.printf("result_13 is an assertion\n");;
+
+(* A = pi * r^2 where A is the area and r is the radius *)
+let circle_area x = 3.14 *. (x ** 2.);;
+let () = assert(circle_area 3.  = 28.26);;
+let () = assert(circle_area 4.  = 50.24);;
+let () = assert(circle_area 5.  = 78.5);;
+Printf.printf("result_14 is an assertion\n");;
